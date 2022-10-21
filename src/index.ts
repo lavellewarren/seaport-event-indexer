@@ -43,7 +43,7 @@ const main = async () => {
       const recipeItem = consideration.find(
         (item: any) => String(item.recipient).toLowerCase() === String(offerer).toLowerCase(),
       );
-      const amountPaid = Number(formatUnits(recipeItem['amount']));
+      const amountPaid = recipeItem ? Number(formatUnits(recipeItem['amount'])) : 0;
 
       await createSaleRecord([
         transactionHash,
@@ -55,10 +55,9 @@ const main = async () => {
         amountPaid,
       ]);
 
-      // console.log(`Created new sale record of txn: ${transactionHash}\n`);
+      console.log(`Created new sale record of txn: ${transactionHash}\n`);
     } catch (err) {
       console.log(err);
-      console.log(orderHash, offerer, zone, recipient, offer, consideration, data);
     }
   });
 };
