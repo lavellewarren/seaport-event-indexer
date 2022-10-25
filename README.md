@@ -1,6 +1,6 @@
-# Nodejs PostGraphile Assignment
+# Seaport Event Indexer
 
-Nodejs PostGraphile Assignment
+Seaport Event Indexer
 
 ## Requirements
 - NodeJS
